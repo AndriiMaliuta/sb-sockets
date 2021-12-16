@@ -10,9 +10,10 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 @Configuration(proxyBeanMethods = false)
 @EnableWebSocketMessageBroker
-public class WebSockConfig implements WebSocketMessageBrokerConfigurer {
+public class WebSockBrokerConfig implements WebSocketMessageBrokerConfigurer {
 
     //https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#websocket
+    //https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#websocket-stomp
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/topic");
@@ -27,5 +28,7 @@ public class WebSockConfig implements WebSocketMessageBrokerConfigurer {
 //    public ServerEndpointExporter serverEndpointExporter() {
 //        return new ServerEndpointExporter();
 //    }
+
+
 
 }
